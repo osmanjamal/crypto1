@@ -1,12 +1,8 @@
-from flask import Flask, request, render_template, redirect, url_for,flash
-import json
+from flask import request
 from binance.client import Client
 from binance.enums import *
+import json
 import datetime
-import math
-import asyncio
-from typing import Dict, List, Any
-from config import Config
 
 def ip_address():
     if 'X-Forwarded-For' in request.headers:
@@ -18,6 +14,25 @@ def ip_address():
         user_ip = request.remote_addr
         user_ip = user_ip.replace(".", "")
     return user_ip
+
+
+
+
+def get_account_info(binance_client):
+    """الحصول على معلومات الحساب"""
+    try:
+        futures_account = binance_client.futures_account_balance()
+        total_balance = sum(float(balance['balance']) for balance in futures_account)
+        available_balance = sum(float(balance['availableBalance']) for balance in futures_account)
+        
+        return {
+            'total_balance': round(total_balance, 2),
+            'available_balance': round(available_balance, 2),
+            'currency': 'USDT'
+        }
+    except Exception as e:
+        print(f"خطأ في الحصول على معلومات الحساب: {str(e)}")
+        return None
 
 def tg_token():
     token = fetch_database('t_bot_token.json')

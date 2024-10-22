@@ -8,6 +8,7 @@ from functools import wraps
 import os
 import concurrent.futures as cf
 import pandas as pd
+from typing import Dict, Any  # إضافة هذا السطر
 
 # الملفات المحلية
 from config import Config
@@ -16,11 +17,11 @@ from functions import (
     close_positions_by_symbol,
     place_order,
     print_dict_data,
+    get_account_info,
     ip_address,
     read,
     write,
     get_account_info,
-    get_open_positions
 )
 # تهيئة التطبيق
 app = Flask(__name__)
@@ -33,7 +34,7 @@ except Exception as e:
     print(f"خطأ في تهيئة عميل بينانس: {str(e)}")
 
 
-def write_output(output: List[str]) -> None:
+def write_output(output: list[str]) -> None:
     """كتابة المخرجات إلى الملف مع تنسيق محسن"""
     try:
         with open("output.txt", "a", encoding="utf-8") as output_file:
@@ -133,7 +134,7 @@ def webhook_user():
         write_output(output)
         return "حدث خطأ في المعالجة"
 
-def binance_function(data: Dict[str, Any], output: List[str]) -> Dict[str, str]:
+def binance_function(data: Dict[str, Any], output: list[str]) -> Dict[str, str]:
     """معالجة إشارات التداول"""
     try:
         # استخراج بيانات الإشارة
@@ -254,7 +255,7 @@ def main():
     return redirect(url_for('index'))
 
 @app.route('/dashboard', methods=['GET', 'POST'])
-async def index():
+def index():
     """لوحة التحكم"""
     auth_session = read('auth.txt')
     ip_session = str(read('ip_address.txt'))
@@ -287,7 +288,7 @@ async def index():
                          open_positions=open_positions)
 
 @app.route('/signals', methods=['GET', 'POST'])
-async def signals():
+def signals():
     """صفحة الإشارات"""
     auth_session = read('auth.txt')
     ip_session = str(read('ip_address.txt'))
@@ -336,7 +337,7 @@ def get_account_info() -> Dict[str, Any]:
         print(f"خطأ في الحصول على معلومات الحساب: {str(e)}")
         return {}
 
-def get_open_positions() -> List[Dict[str, Any]]:
+def get_open_positions() -> list[Dict[str, Any]]:
     """الحصول على المراكز المفتوحة"""
     try:
         positions = binance_client.futures_position_information()

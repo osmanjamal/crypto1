@@ -68,7 +68,7 @@ def change_password():
 
 
 @app.route('/dashboard', methods=['GET', 'POST'])
-async def index():
+ def index():
     auth_session = read('auth.txt')
     ip_session = str(read('ip_address.txt'))
     ip_add = ip_address()
@@ -101,7 +101,7 @@ async def index():
 
 
 @app.route('/signals', methods=['GET', 'POST'])
-async def signals():
+ def signals():
   auth_session = read('auth.txt')
   ip_session = str(read('ip_address.txt'))
   ip_add = ip_address()
@@ -133,7 +133,7 @@ async def signals():
 
 
 @app.route('/trades', methods=['GET', 'POST'])
-async def trades():
+ def trades():
   auth_session = read('auth.txt')
   ip_session = str(read('ip_address.txt'))
   ip_add = ip_address()
