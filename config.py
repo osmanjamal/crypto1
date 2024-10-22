@@ -25,7 +25,7 @@ class Config:
     SECRET_KEY = '123fdsgcsfgxgfg1514cgcd45'
     ADMIN_USERNAME = 'admin'
     ADMIN_PASSWORD = 'admin123'
-    
+    Private_Key = '123456789'
     # إعدادات التيليجرام
     TELEGRAM_TOKEN = ''
     TELEGRAM_CHAT_ID = ''
