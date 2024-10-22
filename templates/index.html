@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <title>MT5 Dashboard</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
+
+</head>
+<body>
+   <center>
+      <ul class="navbar">
+        <li><a class="active" href="/">Home</a></li>
+        <li><a href="/signals">Signal Logs</a></li>
+        <li><a href="http://95.179.246.255:3000/" target="_blank">Open MT5</a></li>
+        <!--<li><a href="/max_loss_settings">Risk Settings</a></li>-->
+        <!--<li><a href="/api_settings">Add / Edit API</a></li>-->
+        <div style="display: flex; justify-content: flex-end;">
+          <li><a class="logout" href="/logout" >Logout</a></li>
+        </div>
+      </ul>
+    </center>
+
+  <div class="trans-box-header ">
+      <h1>MT5 Dashboard</h1>
+   </div>
+
+  <div class="trans-box-body-dashboard">
+    <div style="display: flex; width: 100%;justify-content: center;">
+      <div class="card" style="flex: 1; margin-right: 10px;">
+         <center><p class="trans-box-body" style="border-radius:5px;">Webhook URLs</p>
+         <div class="code-box-info">
+         <div class="card-body">
+               <p style="font-size: 15px;" id="webhook">
+                  <script>
+                     document.getElementById("webhook").innerHTML = 
+                     window.location.origin+"/webhook";
+                  </script>
+               </p>               
+         </div>
+         </div></center>
+         <button class="custom-button" id="copyWebhook">Copy Webhook</button>
+         
+		<div class= "code-box-info">
+		 <p  style="text-align:left; margin-left: 0rem; margin-right: 0rem;">
+		  ✅ Generate syntax from syntax generator.</br>
+		  ✅ Copy syntax and goto TradingView.</br>
+		  ✅ Open Alert Window and click on New Alert.</br>
+		  ✅ Select your strategy in Condition option.</br>
+		  ✅ Give your alert any name in Alert Name input.</br>
+		  ✅ In message box, paste the Generated Syntax.</br>
+		  ✅ Goto Notifications and click on Webhook Option.</br>
+		  ✅ Copy Webhook URL from this page and paste it there.</br>
+		  ✅ Click on Create and your alert is ready to trade now.</br>
+
+		 </p></div></div>
+
+
+	<div class="card" style="flex: 1; margin-right: 10px;">
+    <center><p class="trans-box-body" style="border-radius:5px;">Generate Syntax</p></center>
+    <div class="card-inline" style="margin-top:30px;">
+		<form  action="/dashboard" method="POST">
+         <div  style="padding-top:0px";>
+
+         <label for="script_type">Script Type</label>
+         <select name="script_type" id="script_type" onchange="showAlert(this)">
+            <option value="STRATEGY">STRATEGY</option>
+            <option value="INDICATOR">INDICATOR</option>
+         </select>
+
+         <label for="symbol">Symbol </label>
+         <input type="text" name="symbol" id="symbol" placeholder="Enter symbol same as in MT5">
+
+         <label for="alert_type" id="alert_type_label" style="display: none;">Alert Type</label>
+         <select name="alert_type" id="alert_type" style="display: none;">
+               <option type="text" name="alert_type" id="alert_type" value="BUY">BUY</option>
+               <option type="text" name="alert_type" id="alert_type" value="SELL">SELL</option>
+         </select>
+
+			<label for="qty">Quantity </label>
+			<input type="text" name="qty" id="qty" placeholder="e.g. 0.1">
+
+         <div class="input-container trans-box-header" style="padding:10px;border-radius:5px;height:120px;">
+            <div class="input-row">
+               <div class="input-group">
+                  <label class="trans-box-header qty-box" for="tp_distance">TP %</label>
+                  <input type="text" name="tp_distance" id="tp_distance" placeholder='e.g. 1.5'>
+               </div>
+               <div class="input-group">
+                  <label class="trans-box-header qty-box" for="sl_distance">SL %</label>
+                  <input type="text" name="sl_distance" id="sl_distance" placeholder='e.g. 1.5'>
+               </div>
+               <!--<div class="input-group">
+                  <label class="trans-box-header qty-box" for="tp_3">TP 3</label>
+                  <input type="text" name="tp_3" id="tp_3" placeholder='e.g. 2.03 (60%)'>
+               </div>-->
+            </div>
+            </div>
+
+			<input type="submit" value="Generate">
+         </div>
+		</form> </div>
+		
+
+		<div class="code-box-info" id="syntax-box">
+         {{ syntax | safe }}
+      </div></br>
+      <button class="custom-button" id="copySyntax">Copy Syntax</button>
+		
+	</div></div>
+
+<script src="{{ url_for('static', filename='scripts.js') }}"></script>
+</body>
+</html>

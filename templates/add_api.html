@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>API Settings</title>
+      <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+      <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
+   </head>
+   <body>
+      <center>
+         <ul class="navbar">
+            <li><a href="/">Home</a></li>
+            <li><a href="/signals">Signal Logs</a></li>
+            <!--<li><a href="/max_loss_settings">Risk Settings</a></li>-->
+            <!--<li><a href="/api_settings">Add / Edit API</a></li>-->
+        <div style="display: flex; justify-content: flex-end;">
+          <li><a class="logout" href="/logout" >Logout</a></li>
+        </div>
+         </ul>
+      </center>
+      <div class="trans-box-header ">
+         <center>
+            <h1>API Settings</h1>
+         </center>
+      </div>
+
+
+      <div class="trans-box-body-dashboard" style="margin-top:20px;">
+      <div style="display: flex; width: 100%;justify-content: center;">
+         <div id="account_1" class="card" style="flex: 1; margin-right: 10px;">
+            <!--<center>
+               <h1 style="border-radius:5px;">Account 1</h1>
+            </center>-->
+            <center>
+               <h3 class="trans-box-body" style="border-radius:5px;">Enter MT5 Login Details</h3>
+            </center>
+            <div class="card-inline">
+               <form action="{{ url_for('add_metaapi', account_number=1) }}" method="POST">
+                  <div style="padding-top:20px";>
+                     <label for="login">Login ID </label>
+                     <input type="text" name="login" id="login" placeholder={{login}}>
+                     <label for="password">Password </label>
+                     <input type="text" name="password" id="password" placeholder={{password}}>
+                     <label for="server">Server </label>
+                     <input type="text" name="server" id="server" placeholder={{server}}>
+                     <input type="submit" value="Save">
+                  </div>
+               </form>
+            </div>
+            <!--<center>
+               <h3 class="trans-box-body" style="border-radius:5px;">Telegram</h3>
+            </center>
+            <div class="card-inline">
+               <form action="{{ url_for('add_api_telegram', account_number=1) }}" method="POST">
+                  <div style="padding-top:20px";>
+                     <label for="tg_token">TG Token </label>
+                     <input type="text" name="tg_token" id="tg_token" placeholder={{tg_token_1}}>
+                     <label for="tg_channel">TG Channel ID </label>
+                     <input type="text" name="tg_channel" id="tg_channel" placeholder={{tg_channel_1}}>
+                     <input type="submit" value="Save">
+                  </div>
+               </form>
+            </div>
+         </div>-->
+
+          
+
+      
+ </div> 
+
+</div>
+      
+   </body>
+</html>

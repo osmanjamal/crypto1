@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Signal Logs</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
+
+</head>
+<body>
+   <center>
+      <ul class="navbar">
+        <li><a href="/">Home</a></li>
+        <li><a class="active" href="/signals">Signal Logs</a></li>
+        <li><a href="http://95.179.246.255:3000/" target="_blank">Open MT5</a></li>
+        <!--<li><a href="/max_loss_settings">Risk Settings</a></li>-->
+        <!--<li><a href="/api_settings">Add / Edit API</a></li>-->
+        <div style="display: flex; justify-content: flex-end;">
+          <li><a class="logout" href="/logout" >Logout</a></li>
+        </div>
+      </ul>
+    </center>
+
+
+    <div class="trans-box-header ">
+   
+   <center><h1>Webhook Signal Logs</h1></center>
+   </div>
+   <div class="trans-box-body-dashboard" style="background-color: rgba(0, 0, 0, 0.253);">
+      <style>
+         table {
+           width: 100%;
+           border-collapse: collapse;
+         }
+     
+         th, td {
+           padding: 8px;
+           text-align: left;
+           border-bottom: 1px solid #ffffff2f;
+         }
+     
+         th {
+           background-color: #00000044;
+         }
+       </style>
+   {% for table in tables %}
+   {{ table|safe }}
+   {% endfor %}
+   
+   
+   </div>
+</body>
+</html>

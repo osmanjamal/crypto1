@@ -1,0 +1,310 @@
+@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+body {
+  background-color: #000000; /*#1a1a1a;*/
+  /* background-image: url('bg-min.jpg') ; */
+  /* background-image: linear-gradient(140deg, #343A4F 10%, #0F1620); */
+  background-image: url("https://png.pngtree.com/thumb_back/fh260/back_pic/04/24/66/495836a65fcb8f9.jpg");
+  /*background-image: url("https://images.hdqwalls.com/wallpapers/artistic-3d-shapes-4k-abstract-q7.jpg");*/
+  /*https://images.unsplash.com/photo-1508311603478-ce574376c3cf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1500&q=100*/
+  color: #ffffff;
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-size: 16px;
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(15px); /* For Safari */
+  width:99%; /*Takes 90% width from WebContainer*/
+  height: auto;
+  margin: auto;
+  background-size: 100%;
+	align-items: center;
+	justify-content: center;
+}
+
+.alert{
+  padding:10px; 
+  margin-bottom:10px; 
+  background-color:teal; 
+  border: solid white 1px; 
+  color:white;
+  font-size: 18px;
+  border-radius: 5px;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 20px;
+  color:white
+}
+
+
+.trans-box-header {
+  background : rgba(0,0,0,.1);/*#0714458f; */
+  width:auto; 
+  border: solid #ffffff5c 2px;
+  margin-bottom:10px; 
+  padding:0px;
+  margin-top: 10px;
+}
+
+.trans-box-body {
+  background : rgba(0,0,0,.1);/*#0714458f; */
+  width:auto; 
+  height:100%;  
+  border: solid #ffffff5c 2px; 
+  margin-bottom:10px; 
+  padding:20px;
+}
+
+.trans-box-body-dashboard {
+  background : rgba(0,0,0,.1);/*#0714458f; */
+  width:auto; 
+  height:fit-content;  
+  border: solid #ffffff5c 2px; 
+  margin-bottom:10px; 
+  padding:20px;
+  justify-content: center;
+  
+}
+
+.card {
+  /*background-color: rgba(178, 115, 255, 0.08);/*#042f6d;*/
+  background-color:#000000;
+  border-radius: 5px;
+  font-family: "Be Vietnam Pro", sans-serif;
+  position: relative;
+  /* left:64px; */
+  font-size: 16px;
+  font-weight: 200;
+  padding: 20px;
+  /* margin: 50px auto; */
+  max-width: 500px;
+  box-shadow: 0px 15px 15px rgba(0,0,0,0.6);
+  border: solid #ffffff5c 2px;
+  background-color: #343a4fa2;
+  /*background-image: linear-gradient(122deg, #343A4F 20%, #0F1620)*/
+  
+}
+
+.card-inline {
+  /*background-color: rgba(178, 115, 255, 0.08);/*#042f6d;*/
+  border-radius: 7px;
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-size: 22px;
+  font-weight: 200;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 500px;
+  box-shadow: 0px 15px 15px rgba(0,0,0,0.5);
+  border: solid #ffffff31 1px;
+  background-color: #4d4855;
+  background-image: linear-gradient(140deg, #343A4F 10%, #0F1620);
+}
+
+.code-box {
+  /*background-color: rgba(178, 115, 255, 0.08);/*#042f6d;
+  background-color:#000000;*/
+  border-radius: 5px;
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-size: 16px;
+  font-weight: 200;
+  padding: 20px;
+  margin: 50px auto;
+  max-width: 500px;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  box-shadow: 3px 3px 7px rgba(0,0,0,0.6) inset;
+  border: solid #ffffff5c 0px;
+  background-color: #343a4f00;
+  /*background-image: linear-gradient(122deg, #343A4F 20%, #343A4F); /*#0F1620*/
+  
+}
+.code-box-info {
+  /*background-color: rgba(178, 115, 255, 0.08);/*#042f6d;
+  background-color:#000000;*/
+  border-radius: 5px;
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-size:16px;
+  padding:5%;
+  font-weight: 300;
+  margin: 10px auto;
+  max-width: 5000px;
+  margin-top: 2rem;
+  box-shadow: -2px -2px 3px #ffffff69 inset;
+  /* box-shadow: -2px -2px 3px #ffffff69 ; */
+  border: solid #ffffff5c 0px;
+  background-color: #00000065;
+  /*background-image: linear-gradient(122deg, #343A4F 20%, #343A4F); /*#0F1620*/
+  
+}
+label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+select, input[type=text], input[type=password] {
+  width: 96%;
+  padding: 10px;
+  border: none;
+  background-color: #00000065;
+  color: #ffffff;
+  margin-bottom: 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3) inset;
+  border: solid #04528b 0px;
+}
+
+.form-box{
+  border: solid #04528b 0px;
+  border-radius: 5px;
+}
+
+input[type=submit] {
+  background-color: #00000038;/*#042f6d;/*#007bff;*/
+  color: #ffffff;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  
+}
+
+
+
+input[type=submit]:active {
+  background-color: #00000038;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+input[type=submit]:hover {
+  background-color: #00000038;/*#0056b3;*/
+}
+  
+option {
+  background-color: #000000;
+}
+
+
+/* Generic button styles */
+.custom-button {
+  background-color: #00000038;
+  color: #ffffff;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.custom-button:active {
+  background-color: #00000038;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+/* CSS for the navigation bar */
+ul.navbar {
+  list-style-type: none;
+  margin: 0;
+  padding: 5px;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.253);
+  border: solid #ffffff5c 2px;
+  
+}
+
+ul.navbar li {
+  float: left;
+}
+
+ul.navbar li a {
+  display: block;
+  padding: 8px 16px;
+  text-decoration: none;
+  color: white
+}
+
+ul.navbar li a:hover {
+  background-color: #1b2845;
+  background-image: linear-gradient(315deg, #1b2845 0%, #274060 74%);
+  color: white;
+  margin-right: 2px;
+  border-radius: 0px;
+}
+
+
+ul.navbar a.active {
+  background-color: #1b2845;
+  background-image: linear-gradient(315deg, #1b2845 0%, #274060 74%);
+
+  color: white;
+  margin-right: 2px;
+  border-radius: 10px;
+}
+
+.logout {
+  border: 0px solid black; 
+  background-color: maroon; 
+  -webkit-text-fill-color: white;
+  border-radius: 10px;
+}
+
+
+table {
+  border-collapse: collapse;
+  border: 1px solid #000;
+  margin-top:10px;
+  width:100%;
+}
+
+th, td {
+  border: 1px solid #ffffff88;
+  padding: 8px;
+  font-weight: 200;
+}
+
+.flash-box-history-error{
+  padding:10px; 
+  position: relative;
+  left: 13%;
+  margin-bottom:10px; 
+  border-radius:5px; 
+  border: solid white 1px; 
+  color:white; 
+  background-color: #ff000059;
+  width: 70%;
+  text-align: center;
+}
+
+/* Flex container for the input rows */
+.input-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+/* Each input row */
+.input-row {
+  display: flex;
+  width: 100%;
+  margin-left: -8px;
+}
+
+/* Each input group (label + input) */
+.input-group {
+  flex-basis: 100%; /* Adjust this value to control the width of each input group */
+  margin: 15px;
+  text-align: center;
+}
+
+/* Labels above the input boxes */
+.input-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 15px;
+}
+.qty-box{
+  padding:5px;
+  border-radius:5px;
+  width:102%;
+}
